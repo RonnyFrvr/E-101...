@@ -1,0 +1,254 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --PRIMARY-COLOR: white;
+  --SECONDARY-COLOR: rgb(8, 140, 228);
+  --TEXT-COLOR: rgba(0, 0, 50, 0.87);
+  --HEADER-COLOR: black;
+}
+
+header{
+  padding: 0.5rem;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  border-bottom-right-radius: 30px;
+}
+
+header .img{
+  display: block;
+  margin: 0 auto;
+}
+
+body{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+h1{
+  letter-spacing: 3.5px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+h1:hover{
+  color: transparent;
+  background: linear-gradient(to right, var(--SECONDARY-COLOR), var(--PRIMARY-COLOR), var(--SECONDARY-COLOR), var(--SECONDARY-COLOR));
+  background-clip: text;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.left_nav img{
+  width: 55px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.left_nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4.5rem;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+
+
+.left_nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.left_nav a:hover img {
+  transform: scale(1.1);
+}
+
+.left_nav img {
+  width: 55px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.left_nav .about_msg,
+.left_nav .review_msg {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.705);
+  margin-top: 0.2rem;
+  text-align: center;
+}
+
+.underline{
+  margin-right: 10px;
+  width: 60px;
+  height: 3px;
+  background-color: var(--SECONDARY-COLOR);
+  margin-top: 0.2rem;
+  border-radius: 5px;
+}
+
+.left_nav a:last-child{
+  transform: translateY(2rem);
+}
+
+
+.right_nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4.5rem;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+
+.right_nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.right_nav a:hover img {
+  transform: scale(1.1);
+}
+
+.right_nav img {
+  width: 55px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.right_nav .others_msg,
+.right_nav .admin_msg {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.705);
+  margin-top: 0.2rem;
+  text-align: center;
+}
+
+.right_nav a:first-child{
+  transform: translateY(2rem);
+}
+
+
+
+.nonbold-header{
+  font-weight: 500;
+}
+.admin-sidebar{
+  grid-area: sd;
+  background-image: url(/Images/IMG-20251225-WA0008.jpg);
+  background-size: cover;
+  background-position: right;
+  border-top-right-radius: 30px;
+  height: 120%;
+}
+.admin-sidebar h3{
+  color: #df1717;
+}
+
+
+body{
+  display: grid;
+  grid-template-areas: 
+    "hd hd hd hd hd hd hd hd hd"
+    "sd sd sd sd mn mn mn mn mn"
+    "sd sd sd sd ft ft ft ft ft";
+  grid-template-rows: auto 1fr auto;
+  min-height: 90vh;
+}
+
+header{
+  grid-area: hd;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  grid-area: mn;
+  padding: 2rem;
+}
+
+.sidebar{
+  grid-area: sd;
+  border-right: 2px solid black;
+  background-image: url(/Images/about-img-test1.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: rgba(35, 17, 154, 0.346);
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 0px;
+  height: 120%;
+}
+.sidebar h1{
+  backdrop-filter: blur(3px);
+  padding: 20px;
+  color: rgba(210, 213, 249, 0.575);
+  font-size: 2rem;
+  border: 1px solid gray;
+  border-radius: 10px;
+  margin: 1.5rem;
+  transition: all 0.3s ease;
+}
+.sidebar h1:hover{
+  color: var(--PRIMARY-COLOR);
+  border: 1px solid var(--PRIMARY-COLOR);
+  box-shadow: 0 0 10px var(--PRIMARY-COLOR);
+/*   transform: scale(1.1); */
+
+}
+
+footer{
+  grid-area: ft;
+  padding: 0;
+  border-top: 2px solid rgb(0, 0, 0);
+  border-top-right-radius: 30px;
+  text-align: center;
+  height: 0;
+}
+footer p{
+  color: rgba(36, 36, 36, 0.773);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.nowrap{
+  white-space: nowrap;
+}
+.nowrap2{
+  white-space: nowrap;
+}
+
+.left_nav .about_msg{
+  margin-right: 10px;
+}
+
+
+h2{
+  color: var(--SECONDARY-COLOR);
+}
